@@ -26,10 +26,17 @@ class TestSolution(unittest.TestCase):
         c = Solution.maxPoints(ps)
         self.assertEqual(c, 4)
     
+    def test_solution_2(self):
+        ps = [[0,0],[94911151,94911150],[94911152,94911151]]
+        ps = [Point(*i) for i in ps]
+        c = Solution.maxPoints(ps)
+        self.assertEqual(c, 2)
+    
 def suite():
     suite = unittest.TestSuite()
     suite.addTest(TestSolution('test_solution'))
     suite.addTest(TestSolution('test_solution_1'))
+    suite.addTest(TestSolution('test_solution_2'))
     return suite
 
 if __name__ == '__main__':
